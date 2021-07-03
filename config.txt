@@ -1,0 +1,5 @@
+﻿#sometext
+path = some text
+some-text
+number = some Text
+<par> sometext </par>
