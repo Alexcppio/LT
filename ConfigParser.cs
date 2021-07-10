@@ -17,16 +17,15 @@ namespace HW_parser
         }
         public Config Parse()
         {
-            var str = getParameterValue(createLinesArr(), "path");
-            var str2 = getParameterValue(createLinesArr(), "number");
+            var str = GetParameterValue(CreateLinesArr(), "path");
+            var str2 = GetParameterValue(CreateLinesArr(), "number");
             int num;
 
             if (int.TryParse(str2, out num))
                 return new Config(str, num);
             throw new InvalidCastException(nameof(str2));
         }
-
-        private string[] createLinesArr()
+        private string[] CreateLinesArr()
         {
             var arr = _str.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
             if (arr.Length < 2)
@@ -34,7 +33,7 @@ namespace HW_parser
             else
                 return _str.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
         }
-        private string getParameterValue(string[] lines, string paramName)
+        private string GetParameterValue(string[] lines, string paramName)
         {
             if (lines.FirstOrDefault(t => t.ToLower().StartsWith(paramName)).ToString().Split('=')[1].Trim() != null)
                 return lines.FirstOrDefault(t => t.ToLower().StartsWith(paramName)).ToString().Split('=')[1].Trim();
