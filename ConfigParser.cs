@@ -23,14 +23,14 @@ namespace HW_parser
 
             if (int.TryParse(str2, out num))
                 return new Config(str, num);
-            throw new InvalidCastException();
+            throw new InvalidCastException(nameof(str2));
         }
 
         private string[] createLinesArr()
         {
             var arr = _str.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
             if (arr.Length < 2)
-                throw new NullReferenceException();
+                throw new NullReferenceException(nameof(arr));
             else
                 return _str.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
         }
@@ -38,7 +38,7 @@ namespace HW_parser
         {
             if (lines.FirstOrDefault(t => t.ToLower().StartsWith(paramName)).ToString().Split('=')[1].Trim() != null)
                 return lines.FirstOrDefault(t => t.ToLower().StartsWith(paramName)).ToString().Split('=')[1].Trim();
-            throw new NullReferenceException();
+            throw new NullReferenceException(nameof(lines));
         }
     }
 }

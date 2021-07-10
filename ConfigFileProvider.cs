@@ -22,7 +22,7 @@ namespace HW_parser
             {
                 if(stringReader != null)
                     return stringReader.ReadToEnd();
-                throw new NullReferenceException();
+                throw new NullReferenceException(nameof(stringReader));
             }
         }
     }
