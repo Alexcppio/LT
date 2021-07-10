@@ -1,5 +1,5 @@
-﻿#sometext
-path = some text
-some-text
-number = some Text
-<par> sometext </par>
+﻿﻿#some = text
+path = sOmE TeXt
+some = text
+number = 123478
+<path> = sometext </par>

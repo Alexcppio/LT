@@ -4,16 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp5
+namespace HW_parser
 {
     public class Config
     {
-        public string Path { get; }
+        public string FilePath { get; }
         public int Number { get; }
-        public Config(string path, int number)
-        {
-            Path = path;
-            Number = number;
-        }
+        public Config(string path, int number) { FilePath = path; Number = number;}
+        public override string ToString() => "Path: " + FilePath + "\n" + "Number: " + Number;
     }
 }

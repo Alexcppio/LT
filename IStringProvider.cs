@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace HW_parser
 {
-    public interface IParser<T> where T : class
+    public interface IStringProvider
     {
-        T Parse();
+        string GetString();
     }
 }
